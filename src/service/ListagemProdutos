@@ -1,0 +1,22 @@
+import Produto from "../model/Produto";
+import Listagem from "./Listagem";
+
+export default  class ListagemProdutos extends Listagem{
+    private produtos: Array<Produto>
+
+    constructor(produtos: Array<Produto>){
+        super()
+        this.produtos = produtos
+    }
+
+
+    public listar(): void {
+        console.clear()
+        console.log("--- Listando Produtos ---")
+        this.produtos.forEach(produto => {
+            console.log(`Nome: ${produto.nome}`)
+            console.log(`Preço: ${produto.preco}`)
+            console.log(`----------------------------`)
+        })
+    }
+}

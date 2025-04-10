@@ -67,21 +67,21 @@ export default class Cliente{
         this.telefones.push(telefone)
     }
 
-    public atualizarServicoConsumido(nomeAntigo: string, nomeNovo: string): void{
-        this.servicosConsumidos.forEach(servico => {
-            if (servico.nome === nomeAntigo){
-                servico.nome = nomeNovo
-            }
-        })
-    }
+    // public atualizarServicoConsumido(nomeAntigo: string, nomeNovo: string): void{
+    //     this.servicosConsumidos.forEach(servico => {
+    //         if (servico.nome === nomeAntigo){
+    //             servico.nome = nomeNovo
+    //         }
+    //     })
+    // }
 
-    public atualizarProdutoConsumido(nomeAntigo: string, nomeNovo: string):void{
-        this.produtosConsumidos.forEach(produto => {
-            if(produto.nome === nomeAntigo){
-                produto.nome = nomeNovo
-            }
-        })
-    }
+    // public atualizarProdutoConsumido(nomeAntigo: string, nomeNovo: string):void{
+    //     this.produtosConsumidos.forEach(produto => {
+    //         if(produto.nome === nomeAntigo){
+    //             produto.nome = nomeNovo
+    //         }
+    //     })
+    // }
 
     public atualizarRg(valorRgAntigo:string, valorRgNovo: string, dataEmissaoNovo: Date):void{
         this.rgs.forEach(rg => {
