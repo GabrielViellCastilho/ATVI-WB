@@ -38,18 +38,25 @@ export default class CadastroCliente extends Cadastro{
         console.log(`\n---- Cadastrado com sucesso ----\n`);
     }
 
-    public remover():void{
-        console.clear()
-        console.log(`---- Início remoção do cliente ----`);
-        let cpf = this.entrada.receberTexto(`Insira o cpf do cliente`)
-        this.clientes.filter((cliente: Cliente) => {
-            return cliente.getCpf.getValor !== cpf
-        })
-        console.log(`\n---- Removido com sucesso ----\n`)
-    }
+    public remover(): void {
+        console.clear();
+        console.log(`---- Início da remoção do cliente ----`);
+        const cpf = this.entrada.receberTexto(`Insira o CPF do cliente: `);
+        
 
-    public atualizar(n: number, cpf: string):void{
+        const index = this.clientes.findIndex(cliente => cliente.getCpf.getValor === cpf);
+        if (index !== -1) {
+            this.clientes.splice(index, 1);
+            console.log(`\n---- Cliente removido com sucesso ----\n`);
+        } else {
+            console.log(`\n---- Cliente não encontrado ----\n`);
+        }
+    }
+    
+    public atualizar(n: number):void{
         console.clear()
+
+        let cpf = this.entrada.receberTexto(`Insira o cpf: `)
 
         let cliente = this.clientes.filter((cliente) =>{return cliente.getCpf.getValor === cpf})[0]
 
